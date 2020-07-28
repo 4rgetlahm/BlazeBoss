@@ -1,0 +1,68 @@
+# Spalvos sitame faile rasomos su & zenklu: &1 &2 &3 &c &a ir pan.
+# Notification message'ai turi papildomas funkcijas: {TIME} ir {NAME}, {TIME} - nurodo laika iki boso atsiradimo sekundemis
+# {NAME} - boso varda kuris nurodytas Boss.Spawn.Name
+# {HEALTH} - parodo boso gyvybes
+# Bossbar.Message - Uzrasas virs HP Bar'o
+# Permissionu pavadinimai kuriuos naudosi, gali keisti kaip nori juos.
+# DelayBeforeSpawn - laikas pries atsiradima, kai panaudosi /boss_spawn komanda
+# DelayBetweenAttacks - intervalas kuris nurodo max laika kiek bosas negaletu naudoti spec. ataku (10s pakankamai gerai)
+# Notifications - sekundes atskirtos kabliataskiais nurodancios, kada bus skelbiama zinute NotificationMessage
+# ReminderNotification - laikas kas kiek bus siunciama priminimo zinute, kad bosas yra atsirades
+# Atakos:
+# Length - Kiek laiko trunka efektai sekundemis
+# Radius - Kokiu atstumu nuo mobo maksimaliai veikia atakos i visas kryptis
+# Lootable - Boso drop'u sarasas, cia atsiras viskas po komandos /boss_additem, galima rasyti manually.
+# Lootable rasomi itemai taip pat kaip essentialsuose, pridetas droprate:procentas, procentas nurodo sansa gauti daikta (droprate:25 - 25% tikimybe gauti.)
+# minDamage - zala reikalinga, kad gauti loot'a
+# PushBackRadius - bloku kiekis nuo boso, kada stumia zmogu nuo saves priesinga kryptimi.
+Boss:
+  PushbackRadius: 1
+  minDamage: 100
+  Spawn:
+    World: world
+    X: 0
+    Y: 0
+    Z: 0
+    Name: Boss
+  MaxHealth: 5000
+Player:
+  Spawn:
+    X: 0
+    Y: 0
+    Z: 0
+Permissions:
+  SetPlayerSpawn: blazeboss.setplayerspawn
+  SetBossSpawn: blazeboss.setbosspawn
+  SpawnBoss: blazeboss.spawn
+  AddItem: blazeboss.additem
+  Teleport: blazeboss.teleport
+Time:
+  DelayBeforeSpawn: 10
+  DelayBetweenAttacks: 10
+  Notifications: 9;8;7;6;5;4;3;2;1
+  ReminderNotification: 10
+  defaultSpawnTime: 14400
+Messages:
+  NotificationMessage: "&4Bosas &6{NAME} &3atsiras uz &2{TIME}"
+  SpawnMessage: "&4Bosas &6{NAME} &2atsirado"
+  TeleportMesage: "&2Jus buvote nuteleportuotas"
+  BossDoesntExist: "&4Bosas negyvas"
+  ReminderNotification: "&aBosas vis dar gyvas! Jam liko {HEALTH} gyvybiu!"
+Attacks:
+  Fire:
+    Length: 5
+    Radius: 7.0
+  Debuff:
+    Length: 5
+    Radius: 5.0
+  Lightning:
+    Radius: 4.0
+  Pushback:
+    Radius: 3.0
+Damage:
+  Fire: 1.0
+  Lightning: 5.0
+Lootable:
+  - 278 1 efficiency:1 durability:1 fortune:1 droprate:25 name:&4Gigadrill lore:The_drill_that_&npierces|the_heavens
+  - 397:3 1 droprate:50 player:Notch
+  - 278 1

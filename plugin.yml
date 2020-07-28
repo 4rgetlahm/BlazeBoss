@@ -1,0 +1,8 @@
+name: BlazeBoss
+version: 0.1
+main: lt.Arnas.BlazeBoss.Main
+commands:
+  boss:
+    description:
+  bosas:
+    description:
